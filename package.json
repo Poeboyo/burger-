@@ -1,0 +1,25 @@
+{
+  "name": "burger-",
+  "version": "1.0.0",
+  "description": "A Node Application for Borgor, Burgers waiting to be eaten and those who were eaten",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poeboyo/burger-.git"
+  },
+  "keywords": [
+    "borger",
+    "burger",
+    "node",
+    "borgoor"
+  ],
+  "author": "Jeffrey Poe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Poeboyo/burger-/issues"
+  },
+  "homepage": "https://github.com/Poeboyo/burger-#readme"
+}
