@@ -12,7 +12,7 @@ const particlesJSON = {
       value: "#01579b" //Or use an array of colors like ["#9b0000", "#001378", "#0b521f"]
     },
     shape: {
-      type: "polygon", // Can show circle, edge (a square), triangle, polygon, star, img, or an array of multiple.
+      type: "img", // Can show circle, edge (a square), triangle, polygon, star, img, or an array of multiple.
       stroke: {
         //The border
         width: 1,
