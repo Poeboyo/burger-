@@ -17,12 +17,12 @@
 
     <div class="row">
         <div class="col s6">
-            <div class="burgers">
+            <div>
                 <h3>Consume?</h3>
-                <ul class="list-group">
+                <ul class="">
                     {{#each burgers}}
                     {{#unless devoured}}
-                    <li class="list-group-item list-group-item-action ">
+                    <li>
                         {{burger_name}}
                         <button class="devour btn red" data-id="{{id}}">CONSUME ME</button>
                     </li>
@@ -36,10 +36,10 @@
 
             <div class="consumed">
                 <h3>Welcome to the Shadow Realm, Jimbo</h3>
-                <ul "list-group">
+                <ul>
                     {{#each burgers}}
                     {{#if devoured}}
-                    <li class="list-group-item list-group-item-action list-group-item-dark grey">
+                    <li class="grey">
                         {{burger_name}}
                     </li>
                     {{/if}}
@@ -54,7 +54,7 @@
 <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
 <script>
     $(function () {
-        
+	
         $(".create-burger").on("submit", function (event) {
             event.preventDefault();
             let newBurger = {
@@ -71,12 +71,12 @@
         $(".devour").on("click", function (event) {
             let id = $(this).data("id");
             console.log(id);
-            let newState = {
+            let monch = {
                 devoured: true
             }
             $.ajax("/api/burgers/" + id, {
                 type: "PUT",
-                data: newState
+                data: monch
             }).then(function () {
                 location.reload();
             })
