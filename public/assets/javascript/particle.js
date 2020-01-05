@@ -9,14 +9,14 @@ const particlesJSON = {
     },
     color: {
       //The color for every node, not the connecting lines.
-      value: "#01579b" //Or use an array of colors like ["#9b0000", "#001378", "#0b521f"]
+      value: "#000000" //Or use an array of colors like ["#9b0000", "#001378", "#0b521f"]
     },
     shape: {
-      type: "img", // Can show circle, edge (a square), triangle, polygon, star, img, or an array of multiple.
+      type: "image", // Can show circle, edge (a square), triangle, polygon, star, img, or an array of multiple.
       stroke: {
         //The border
         width: 1,
-        color: "#145ea8"
+        color: "##000000"
       },
       polygon: {
         //if the shape is a polygon
@@ -24,7 +24,7 @@ const particlesJSON = {
       },
       image: {
         //If the shape is an image
-        src: "../img/borgor.jpeg",
+        src: "assets/img/borgor.jpeg",
         width: 100,
         height: 100
       }
@@ -40,8 +40,8 @@ const particlesJSON = {
     line_linked: {
       enable: true,
       distance: 200, //The radius before a line is added, the lower the number the more lines.
-      color: "#007ecc",
-      opacity: 0.5,
+      color: "#000000",
+      opacity: 0,
       width: 2
     },
     move: {
