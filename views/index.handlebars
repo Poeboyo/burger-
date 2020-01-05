@@ -1,0 +1,86 @@
+<div id="particles-js"><canvas class="particles-js-canvas-el" width="1312" height="1576" style="width: 100%; height: 100%;"></canvas></div>
+<div class="container text-center">
+    <h1>To Eat? Or Not To Eat?</h1>
+    <img src="../public/assets/img/borgor.jpeg"/>
+
+    <h2>Add A "Burger"?</h2>
+
+        <div class="col-sm-12">
+            <div class="form-group">
+                <form class="create-burger">
+                    <textarea class="form-control" id="burger_name"></textarea>
+                    <button type="submit" class="btn btn-success">Submit your Abomination</button>
+                </form>
+            </div>
+        </div>
+
+
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="burgers">
+                <h3>Consume?</h3>
+                <ul class="list-group">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    <li class="list-group-item list-group-item-action">
+                        {{burger_name}}
+                        <button class="devour btn btn-success" data-id="{{id}}">CONSUME ME</button>
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+
+            <div class="consumed">
+                <h3>Welcome to the Shadow Realm, Jimbo</h3>
+                <ul "list-group">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <li class="list-group-item list-group-item-action list-group-item-dark">
+                        {{burger_name}}
+                    </li>
+                    {{/if}}
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script src="../public/assets/javascript/particle.js"></script>
+<script>
+    $(function () {
+        
+        // Click functionality to add a new burger, we use an ajax request to send it to the back-end
+        $(".create-burger").on("submit", function (event) {
+            event.preventDefault();
+            let newBurger = {
+                name: $("#burger_name").val().trim()
+            };
+            $.ajax("/api/burgers", {
+                type: "POST",
+                data: newBurger
+            }).then(function () {
+                location.reload();
+            });
+        });
+        
+        // Click functionality to update a burger, also uses an ajax request to the back-end
+        $(".devour").on("click", function (event) {
+            let id = $(this).data("id");
+            console.log(id);
+            let newState = {
+                devoured: true
+            }
+            $.ajax("/api/burgers/" + id, {
+                type: "PUT",
+                data: newState
+            }).then(function () {
+                location.reload();
+            })
+        });
+    });
+</script>
