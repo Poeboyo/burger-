@@ -1,8 +1,7 @@
 # Burger
 
 This Burger Application allows the user to create and consume each which switches the state of each.
-https://poeboyo.github.io/burger-/
-
+https://borgorr.herokuapp.com/
 ## How it's Made
 
 - The app utilizes HandleBars to create a body. The app connects to an SQL database which has multiple fields, one of which is whether or not the burger is set to be consumed and moved to a separate column.
