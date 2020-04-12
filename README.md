@@ -56,3 +56,5 @@ https://borgorr.herokuapp.com/
 ## Difficulties and Learning
 
 - The main difficulties and learning curves that came with this project was Handlebars as well as using the SQL database and hard coding an ORM to deal with the changes made to the Database. It was interesting using different methods to style the page.
+
+- Removed some of the less than desireable submissions made by Classmates...
